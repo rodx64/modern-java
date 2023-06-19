@@ -1,5 +1,8 @@
 package rba.modernjava.functionalProgramming.consumers;
 
+import rba.modernjava.functionalProgramming.Instructor;
+import rba.modernjava.functionalProgramming.Instructors;
+
 import java.util.List;
 import java.util.function.Consumer;
 

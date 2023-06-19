@@ -1,5 +1,8 @@
 package rba.modernjava.functionalProgramming.consumers;
 
+import rba.modernjava.functionalProgramming.Instructor;
+import rba.modernjava.functionalProgramming.Instructors;
+
 import java.util.List;
 import java.util.function.BiConsumer;
 
@@ -12,7 +15,7 @@ public class BiConsumerExampleInstructors {
         BiConsumer<String, String> biConsumerNameAndGender = (name, gender) ->
                 System.out.println("My name is " + name + " and my gender is " + gender);
 
-        instructors.forEach(instructor -> biConsumerNameAndGender.accept(instructor.name, instructor.getGender()));
+        instructors.forEach(instructor -> biConsumerNameAndGender.accept(instructor.getName(), instructor.getGender()));
 
 
         // Print out name and list of courses
@@ -20,7 +23,7 @@ public class BiConsumerExampleInstructors {
                 System.out.println("My name is " + name + " and my courses are " + courses);
 
         instructors.forEach(instructor ->
-                biConsumerNameAndCourses.accept(instructor.name, instructor.getCourses()));
+                biConsumerNameAndCourses.accept(instructor.getName(), instructor.getCourses()));
     }
 
 }

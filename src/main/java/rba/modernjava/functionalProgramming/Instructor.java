@@ -1,4 +1,4 @@
-package rba.modernjava.functionalProgramming.consumers;
+package rba.modernjava.functionalProgramming;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
