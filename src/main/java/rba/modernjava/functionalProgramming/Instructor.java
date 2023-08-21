@@ -1,15 +1,12 @@
 package rba.modernjava.functionalProgramming;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@Builder
 @ToString
 public class Instructor {
     String name;

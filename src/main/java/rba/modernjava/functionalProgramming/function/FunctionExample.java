@@ -11,9 +11,15 @@ public class FunctionExample {
         Function<String, String> lowerCaseFunction = (str) -> str.toLowerCase();
         System.out.println(lowerCaseFunction.apply("OLA MunDo"));
 
-        Function<String, Boolean> validateOlaMundoFunction = (str) -> str.equals("ola mundo");
-        System.out.println(lowerCaseFunction.andThen(validateOlaMundoFunction).apply("Ola MunDO"));
+        Function<String, Boolean> validateHelloWorld = (str) -> str.equals("hello world");
+        System.out.println(lowerCaseFunction.andThen(validateHelloWorld).apply("hElLo wORlD"));
 
+        Function<Integer, Integer> multiplyBy3 = (a) -> a * 3;
+        Function<Integer, Double> half = a -> a / 2.0;
+        half = half.compose(multiplyBy3);
+        System.out.println(half.apply(5));
 
+        Function<Integer, Integer> id = Function.identity();
+        System.out.println(id.apply(1000));;
     }
 }

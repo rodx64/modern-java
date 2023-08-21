@@ -1,7 +1,7 @@
 package rba.modernjava.functionalProgramming.consumers;
 
 import rba.modernjava.functionalProgramming.Instructor;
-import rba.modernjava.functionalProgramming.Instructors;
+import rba.modernjava.functionalProgramming.InstructorsMock;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 public class ConsumerExampleInstructors {
 
     public static void main(String[] args) {
-        List<Instructor> instructors = Instructors.getAll();
+        List<Instructor> instructors = InstructorsMock.getAll();
 
         // Loop through the instructors and printing entire object
         Consumer<Instructor> consumerObject = (instructor) -> System.out.println(instructor);

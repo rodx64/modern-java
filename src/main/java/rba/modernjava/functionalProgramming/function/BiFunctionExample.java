@@ -1,7 +1,7 @@
 package rba.modernjava.functionalProgramming.function;
 
 import rba.modernjava.functionalProgramming.Instructor;
-import rba.modernjava.functionalProgramming.Instructors;
+import rba.modernjava.functionalProgramming.InstructorsMock;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +18,8 @@ public class BiFunctionExample {
 
         System.out.println("\nBiFunction with Predicate");
         functionTestWithBiFunction();
+
+        biFunctions();
     }
 
     private static void functionTestOne() {
@@ -29,7 +31,7 @@ public class BiFunctionExample {
             return map;
         };
 
-        System.out.println(mapFunction.apply(Instructors.getAll()));
+        System.out.println(mapFunction.apply(InstructorsMock.getAll()));
     }
 
     private static void functionTestWithBiFunction() {
@@ -48,8 +50,17 @@ public class BiFunctionExample {
             return map;
         };
 
-        System.out.println(mapBiFunction.apply(Instructors.getAll(), instructorPredicate));
+        System.out.println(mapBiFunction.apply(InstructorsMock.getAll(), instructorPredicate));
     }
 
+    private static void biFunctions(){
+        BiFunction<Integer, Integer, Integer> multiply = (a, b) -> a * b;
+        System.out.println(multiply.apply(2,3));
+
+
+        Function<Integer, Integer> multiplyBy3 = (a) -> a * 3;
+        multiply = multiply.andThen(multiplyBy3);
+        System.out.println(multiply.apply(2, 3));
+    }
 
 }

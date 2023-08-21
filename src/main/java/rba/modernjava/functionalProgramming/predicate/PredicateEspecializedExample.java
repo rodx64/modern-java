@@ -1,9 +1,5 @@
 package rba.modernjava.functionalProgramming.predicate;
 
-import rba.modernjava.functionalProgramming.Instructor;
-import rba.modernjava.functionalProgramming.Instructors;
-
-import java.util.List;
 import java.util.function.*;
 
 public class PredicateEspecializedExample {

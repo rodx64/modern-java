@@ -1,5 +1,7 @@
 package rba.modernjava.functionalProgramming.consumers;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.function.BiConsumer;
 import java.util.function.DoubleConsumer;
 import java.util.function.IntConsumer;
@@ -15,6 +17,10 @@ public class BiConsumerExampleBasics {
         // Concatenate
         BiConsumer<String, String> biConsumerConcat = (a,b) -> System.out.println(a+b);
         biConsumerConcat.accept("Hello ", "Consumer");
+
+        // Multiplicate
+        BiConsumer<Double, Double> biConsumerMultiplication = (a,b) -> System.out.println(BigDecimal.valueOf(a).multiply(BigDecimal.valueOf(b)).setScale(2, RoundingMode.CEILING));
+        biConsumerMultiplication.accept(10.2, 11.3);
     }
 
 }

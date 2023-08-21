@@ -1,7 +1,7 @@
 package rba.modernjava.functionalProgramming.predicate;
 
 import rba.modernjava.functionalProgramming.Instructor;
-import rba.modernjava.functionalProgramming.Instructors;
+import rba.modernjava.functionalProgramming.InstructorsMock;
 
 import java.util.List;
 import java.util.function.*;
@@ -9,7 +9,7 @@ import java.util.function.*;
 public class PredicateWIthBiConsumerExample {
 
     public static void main(String[] args) {
-        List<Instructor> instructors = Instructors.getAll();
+        List<Instructor> instructors = InstructorsMock.getAll();
 
         Predicate<Instructor> predicateIsOnlineCourse = instructor -> instructor.isOnlineCourse() == true;
 

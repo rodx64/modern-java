@@ -1,7 +1,7 @@
 package rba.modernjava.functionalProgramming.predicate;
 
 import rba.modernjava.functionalProgramming.Instructor;
-import rba.modernjava.functionalProgramming.Instructors;
+import rba.modernjava.functionalProgramming.InstructorsMock;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -14,31 +14,25 @@ public class PredicateExample {
     }
 
     private static void predicateTest() {
-        // Return true if i >= 10
-        System.out.println("Return true if i >= 10");
-        Predicate<Integer> predicate1 = (i) -> i >= 10;
-        System.out.println(predicate1.test(11));
+        Predicate<Integer> biggerThanOrEqualtoTen = (i) -> i >= 10;
+        System.out.println(biggerThanOrEqualtoTen.test(11));
 
-        // Return true if i >= 10 && i is even
-        System.out.println("Return true if i >= 10 && i is even");
-        Predicate<Integer> predicate2 = (i) -> i >= 10 && (i % 2 == 0);
-        System.out.println(predicate2.test(10));
-        System.out.println(predicate2.test(11));
+        Predicate<Integer> biggerThanOrEqualtoTenAndOdd = (i) -> i >= 10 && (i % 2 == 0);
+        System.out.println(biggerThanOrEqualtoTenAndOdd.test(10));
+        System.out.println(biggerThanOrEqualtoTenAndOdd.test(11));
 
-        // Return true if i >= 10 || i is even
-        System.out.println("Return true if i >= 10 || i is even");
-        Predicate<Integer> predicate3 = (i) -> i >= 10 || (i % 2 == 0);
-        System.out.println(predicate3.test(8));
-        System.out.println(predicate3.test(9));
-        System.out.println(predicate3.test(10));
-        System.out.println(predicate3.test(11));
+        Predicate<Integer> biggerThanOrEqualtoTenOrOdd = (i) -> i >= 10 || (i % 2 == 0);
+        System.out.println(biggerThanOrEqualtoTenOrOdd.test(8));
+        System.out.println(biggerThanOrEqualtoTenOrOdd.test(9));
+        System.out.println(biggerThanOrEqualtoTenOrOdd.test(10));
+        System.out.println(biggerThanOrEqualtoTenOrOdd.test(11));
     }
 
     private static void predicateValidations() {
         Predicate<Instructor> predicateInstructorIsOnLine = (instructor) -> instructor.isOnlineCourse();
         Predicate<Instructor> predicateInstructorIsMale = (instructor) -> instructor.getGender().toLowerCase().equals("male");
 
-        List<Instructor> instructors = Instructors.getAll();
+        List<Instructor> instructors = InstructorsMock.getAll();
         instructors.forEach(instructor ->{
             if(predicateInstructorIsOnLine.test(instructor) && predicateInstructorIsMale.test(instructor)){
                 System.out.println(instructor);
