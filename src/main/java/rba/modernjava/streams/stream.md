@@ -2,6 +2,9 @@
 
 A Stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result.
 
+A Numeric Stream is a sequence of numbers that supports various methods which can be pipelined to produce the desired result.
+There are three types: **IntStream**, **LongStream** and **DoubleStream**
+
 ### GIVEN DATA: 
 ```
 private static Stream<Employee> employees = Stream.of(
@@ -18,6 +21,8 @@ private List<List<String>> nestedCarsList = Arrays.asList(
     Arrays.asList("Renault", "Peugeot"),
     Arrays.asList("Toyota", "Honda", "Nissan")
 );
+
+IntStream intStream = IntStream.of(1,2,3,4,5);
 ```
 
 ## Intermediate Operations of a Stream
@@ -200,4 +205,40 @@ employees.get()
     
 // Employee(id=1, name=Jeff Bezos, salary=110000.00)
 // Employee(id=2, name=Bill Gates, salary=220000.00)
+```
+
+-[x] off(): to create a stream from similar type of data
+
+```
+Stream<Integer> stream = Stream.of(1,2,3,5);
+```
+
+-[x] iterate(): generate an infinite sequential **Ordered** Stream from a specific initial element
+
+```
+Stream.iterate(0, i -> i + 2).limit(100);
+```
+
+-[x] generate(): generate an infinite sequential **Unordered** Stream from a specific initial element
+
+```
+Random random = new Random();
+Supplier<Integer> supplier = random::nextInt;
+
+Stream<Integer> streamRandom = Stream.generate(supplier);
+streamRandom.filter(i -> i > 0)
+        .limit(10)
+        .forEach(System.out::println);
+
+// Generated
+1104103833
+27220021
+406607226
+662078402
+82333339
+988750301
+813164122
+330893471
+2009947435
+234791169
 ```
