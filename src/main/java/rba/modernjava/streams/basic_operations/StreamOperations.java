@@ -1,4 +1,4 @@
-package rba.modernjava.streams;
+package rba.modernjava.streams.basic_operations;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

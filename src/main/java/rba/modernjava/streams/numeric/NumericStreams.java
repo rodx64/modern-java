@@ -1,4 +1,4 @@
-package rba.modernjava.streams;
+package rba.modernjava.streams.numeric;
 
 import lombok.ToString;
 
@@ -9,7 +9,6 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.IntSupplier;
 import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
